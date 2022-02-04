@@ -13,13 +13,13 @@ import java.util.Date;
  */
 public class Personas {
     private String nombre;
-    private int identidad;
+    private long identidad;
     private Date fechaNacimiento;
 
     public Personas() {
     }
 
-    public Personas(String nombre, int identidad, Date fechaNacimiento) {
+    public Personas(String nombre, long identidad, Date fechaNacimiento) {
         this.nombre = nombre;
         this.identidad = identidad;
         this.fechaNacimiento = fechaNacimiento;
@@ -33,11 +33,11 @@ public class Personas {
         this.nombre = nombre;
     }
 
-    public int getIdentidad() {
+    public long getIdentidad() {
         return identidad;
     }
 
-    public void setIdentidad(int identidad) {
+    public void setIdentidad(long identidad) {
         this.identidad = identidad;
     }
 

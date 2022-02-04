@@ -19,7 +19,7 @@ public class Transportistas extends Personas{
         super();
     }
 
-    public Transportistas(int aniosExperiencia, String apodo, String nombre, int identidad, Date fechaNacimiento) {
+    public Transportistas(int aniosExperiencia, String apodo, String nombre, long identidad, Date fechaNacimiento) {
         super(nombre, identidad, fechaNacimiento);
         this.aniosExperiencia = aniosExperiencia;
         this.apodo = apodo;
