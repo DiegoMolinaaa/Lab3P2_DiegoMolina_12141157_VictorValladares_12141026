@@ -31,7 +31,9 @@ public class Taxis extends Transportes {
     }
 
     public void setCapacidad(int capacidad) {
-        this.capacidad = capacidad;
+        if (capacidad <= 4 && capacidad >-1){
+            this.capacidad = capacidad;
+        }
     }
 
     @Override
