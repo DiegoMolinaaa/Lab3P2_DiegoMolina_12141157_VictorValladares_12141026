@@ -14,7 +14,12 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Rutas> rutas = new ArrayList();
     public static void main(String[] args) {
         int op=0;
-        //transportistas.add(new Transportistas(20, "Joche", "Roberto Rodriguez", new Date()));
+        transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, new Date()));
+        alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, new Date()));
+        transportes.add(new Buses(231331232, "Amarillo", transportistas, rutas, alumnos, 20, 15));
+        clases.add(new Clases("Programacion II", 1286));
+        clases.add(new Clases("Algebra", 225));
+        rutas.add(new Rutas("Plaza Miraflores", 5, 7));
         while(op!=13){
             System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");

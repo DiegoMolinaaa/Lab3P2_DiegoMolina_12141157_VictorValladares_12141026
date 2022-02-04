@@ -7,7 +7,7 @@ package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
 import java.util.Date;
 
-public class Clases extends Alumnos{
+public class Clases{
     private String nombreClase;
     private int codigo;
 
@@ -15,8 +15,7 @@ public class Clases extends Alumnos{
         super();
     }
 
-    public Clases(String nombreClase, int codigo, int idEstudiantil, String nombre, int identidad, Date fechaNacimiento) {
-        super(idEstudiantil, nombre, identidad, fechaNacimiento);
+    public Clases(String nombreClase, int codigo) {
         this.nombreClase = nombreClase;
         this.codigo = codigo;
     }
@@ -41,7 +40,7 @@ public class Clases extends Alumnos{
 
     @Override
     public String toString() {
-        return super.toString() + "nombreClase=" + nombreClase + ", codigo=" + codigo;
+        return "Clase: "+"Nombre de Clase = " + nombreClase + ", Codigo = " + codigo;
     }
     
     
