@@ -10,6 +10,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     public static void main(String[] args) {
         int op=0;
         while(op!=13){
+            System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");
             System.out.println("2) Crear Ruta");
             System.out.println("3) Crear Alumno");
@@ -25,6 +26,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.println("13) Salir");
             System.out.print("Ingrese una opcion: ");
             op = lea.nextInt();
+            System.out.println("--------------------------------");
             switch(op){
                 case 1:{
                     
@@ -67,6 +69,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                 }
                 case 13:{
                     System.exit(0);
+                    break;
                 }
                 default:{
                     System.out.println("Ingrese una opcion valida");
