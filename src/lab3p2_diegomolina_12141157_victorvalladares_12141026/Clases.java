@@ -7,12 +7,17 @@ package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
 import java.util.Date;
 
+<<<<<<< HEAD
+public class Clases {
+=======
 public class Clases{
+>>>>>>> 0325f7b23d9c8d5320b521544b11b590433bb9bf
     private String nombreClase;
     private int codigo;
 
     public Clases() {
     }
+   
 
     public Clases(String nombreClase, int codigo) {
         this.nombreClase = nombreClase;
@@ -39,7 +44,11 @@ public class Clases{
 
     @Override
     public String toString() {
+<<<<<<< HEAD
+        return "Clase: " + "nombreClase=" + nombreClase + ", codigo=" + codigo;
+=======
         return "Clase: "+"Nombre de Clase = " + nombreClase + ", Codigo = " + codigo;
+>>>>>>> 0325f7b23d9c8d5320b521544b11b590433bb9bf
     }
     
     
