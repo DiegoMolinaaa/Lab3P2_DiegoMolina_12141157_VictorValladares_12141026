@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Rapiditos extends Transportes{
     private int sillas;
-    private ArrayList <Alumnos> alumnos;
+    private ArrayList <Alumnos> alumnos= new ArrayList();
 
     public Rapiditos() {
         super();

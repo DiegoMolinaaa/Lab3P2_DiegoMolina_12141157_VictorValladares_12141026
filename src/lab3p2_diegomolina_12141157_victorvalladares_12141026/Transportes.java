@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Transportes {
     private int placa;
     private String color;
-    private ArrayList <Transportistas> transportista;
-    private ArrayList <Rutas> rutas;
+    private ArrayList <Transportistas> transportista = new ArrayList();
+    private ArrayList <Rutas> rutas = new ArrayList();
 
     public Transportes() {
     }
