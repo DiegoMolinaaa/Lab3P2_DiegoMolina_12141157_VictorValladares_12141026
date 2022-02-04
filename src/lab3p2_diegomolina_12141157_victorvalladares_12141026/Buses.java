@@ -23,7 +23,9 @@ public class Buses extends Transportes{
     }
 
     public void setAlumnos(ArrayList<Alumnos> alumnos) {
-        this.alumnos = alumnos;
+        if (alumnos.size() <= sillas + depie){
+            this.alumnos = alumnos;
+        }
     }
 
     public int getSillas() {
@@ -44,7 +46,7 @@ public class Buses extends Transportes{
 
     @Override
     public String toString() {
-        return super.toString() + "alumnos=" + alumnos + ", sillas=" + sillas + ", depie=" + depie + '}';
+        return super.toString() + "alumnos=" + alumnos + ", sillas=" + sillas + ", depie=" + depie;
     }
     
 }

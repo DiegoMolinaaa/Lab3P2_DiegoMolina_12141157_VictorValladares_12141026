@@ -23,7 +23,9 @@ public class Transportes {
     }
 
     public void setPlaca(int placa) {
-        this.placa = placa;
+        if (placa != this.placa){
+            this.placa = placa;
+        }
     }
 
     public String getColor() {

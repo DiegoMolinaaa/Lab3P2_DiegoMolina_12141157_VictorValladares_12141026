@@ -29,7 +29,9 @@ public class Rapiditos extends Transportes{
     }
 
     public void setAlumnos(ArrayList<Alumnos> alumnos) {
-        this.alumnos = alumnos;
+        if (alumnos.size() <= sillas){
+            this.alumnos = alumnos;
+        }
     }
 
     @Override

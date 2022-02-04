@@ -19,7 +19,9 @@ public class Mototaxis extends Transportes{
     }
 
     public void setAlumnos(int alumnos) {
-        this.alumnos = alumnos;
+        if (alumnos <= 2 && alumnos > -1){
+            this.alumnos = alumnos;
+        }
     }
 
     @Override
