@@ -151,7 +151,22 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         
     }
     public static void agregarClase(){
-        
+        System.out.print("Ingrese el numero del alumno que sera asignado la clase[0 a "+(alumnos.size()-1)+"]: ");
+        int pos1 = lea.nextInt();
+        while(pos1<0 || pos1>(alumnos.size()-1)){
+            System.out.println("Debe de ingresar un numero entre los rangos establecidos [0 a "+(alumnos.size()-1)+"]");
+            System.out.print("Ingrese el numero del cliente que sera asignado una mascota[0 a "+(alumnos.size()-1)+"]: ");
+            pos1 = lea.nextInt();
+        }
+        System.out.print("Ingrese el numero de la clase que sera asignada al alumno[0 a "+(clases.size()-1)+"]: ");
+        int pos2 = lea.nextInt();
+        while(pos2<0 || pos2>(clases.size()-1)){
+            System.out.println("Debe de ingresar un numero entre los rangos establecidos [0 a "+(clases.size()-1)+"]");
+            System.out.print("Ingrese el numero del cliente que sera asignado una mascota[0 a "+(clases.size()-1)+"]: ");
+            pos2 = lea.nextInt();
+        }
+        ((Alumnos)alumnos.get(pos1)).getClases().add(clases.get(pos2));
+        System.out.println("Se ha asignado la mascota exitosamente");
     }
     public static void crearTransportista(){
         
@@ -160,19 +175,29 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         
     }
     public static void listarClases(){
-        
+        for (Object ob : clases) {
+            System.out.println(clases.indexOf(ob)+" -> "+clases.toString());
+        }
     }
     public static void listarRutas(){
-        
+        for (Object ob : rutas) {
+            System.out.println(rutas.indexOf(ob)+" -> "+rutas.toString());
+        }
     }
     public static void listarAlumnos (){
-        
+        for (Object ob : alumnos) {
+            System.out.println(alumnos.indexOf(ob)+" -> "+alumnos.toString());
+        }
     }
     public static void listarTransportistas(){
-        
+        for (Object ob : transportistas) {
+            System.out.println(transportistas.indexOf(ob)+" -> "+transportistas.toString());
+        }
     }
     public static void listarTransportes(){
-        
+        for (Object ob : transportes) {
+            System.out.println(transportes.indexOf(ob)+" -> "+transportes.toString());
+        }
     }
     
     //----------- Metodos de main ----------------------------------------------
