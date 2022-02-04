@@ -68,6 +68,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                 }
                 case 13:{
                     System.exit(0);
+                    break;
                 }
                 default:{
                     System.out.println("Ingrese una opcion valida");
