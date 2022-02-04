@@ -298,4 +298,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }
     }
     
+    public static void agregarEstacion(){
+        System.out.print("Ingrese la posicion de la estacion que desea agreagar: ");
+        int pos = lea.nextInt();
+        System.out.print("Ingrese la posicion del transporte al que le desea agregar esta ruta: ");
+        int pos2 = lea.nextInt();
+        transportes.get(pos2).getRutas().add(rutas.get(pos));
+    }
+    public static void quitarEstacion(){
+        System.out.print("Ingrese la posicion de la estacion que desea eliminar: ");
+        int pos = lea.nextInt();
+        transportes.get(pos).getRutas().remove(pos);
+    }
 }
