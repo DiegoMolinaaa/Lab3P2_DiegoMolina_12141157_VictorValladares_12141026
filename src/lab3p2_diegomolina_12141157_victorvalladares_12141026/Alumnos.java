@@ -19,7 +19,7 @@ public class Alumnos extends Personas {
     public Alumnos() {
     }
 
-    public Alumnos(int idEstudiantil, String nombre, int identidad, Date fechaNacimiento) {
+    public Alumnos(int idEstudiantil, String nombre, long identidad, Date fechaNacimiento) {
         super(nombre, identidad, fechaNacimiento);
         this.idEstudiantil = idEstudiantil;
     }
