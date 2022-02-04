@@ -3,7 +3,7 @@ package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 import java.util.ArrayList;
 
 public class Transportes {
-    private int placa;
+    private String placa;
     private String color;
     private ArrayList <Transportistas> transportista = new ArrayList();
     private ArrayList <Rutas> rutas = new ArrayList();
@@ -11,18 +11,23 @@ public class Transportes {
     public Transportes() {
     }
 
-    public Transportes(int placa, String color, ArrayList <Transportistas> transportista, ArrayList<Rutas> rutas) {
+    public Transportes(String placa, String color, ArrayList <Transportistas> transportista, ArrayList<Rutas> rutas) {
         this.placa = placa;
         this.color = color;
         this.transportista = transportista;
         this.rutas = rutas;
     }
 
-    public int getPlaca() {
+    public Transportes(String placa, String color) {
+        this.placa = placa;
+        this.color = color;
+    }
+    
+    public String getPlaca() {
         return placa;
     }
 
-    public void setPlaca(int placa) {
+    public void setPlaca(String placa) {
         if (placa != this.placa){
             this.placa = placa;
         }
@@ -54,7 +59,7 @@ public class Transportes {
 
     @Override
     public String toString() {
-        return "Transporte: " + "placa = " + placa + ", color = " + color + ", transportista = " + transportista + ", rutas = " + rutas;
+        return "Transporte: " + "Placa = " + placa + ", Color = " + color + ", Transportista = " + transportista + ", Rutas = " + rutas;
     }
     
     

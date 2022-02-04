@@ -12,7 +12,6 @@ public class Clases{
     private int codigo;
 
     public Clases() {
-        super();
     }
 
     public Clases(String nombreClase, int codigo) {
