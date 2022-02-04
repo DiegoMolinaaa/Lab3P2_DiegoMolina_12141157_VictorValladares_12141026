@@ -21,6 +21,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         // TODO code application logic here
         int op=0;
         while(op!=13){
+            System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");
             System.out.println("2) Crear Ruta");
             System.out.println("3) Crear Alumno");
@@ -36,6 +37,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.println("13) Salir");
             System.out.print("Ingrese una opcion: ");
             op = lea.nextInt();
+            System.out.println("--------------------------------");
             switch(op){
                 case 1:{
                     break;
