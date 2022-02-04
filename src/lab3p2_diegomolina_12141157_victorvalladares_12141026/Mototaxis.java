@@ -14,6 +14,11 @@ public class Mototaxis extends Transportes{
         this.alumnos = alumnos;
     }
 
+    public Mototaxis(int alumnos, String placa, String color) {
+        super(placa, color);
+    }
+    
+
     public int getAlumnos() {
         return alumnos;
     }

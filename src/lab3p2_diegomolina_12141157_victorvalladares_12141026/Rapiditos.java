@@ -16,6 +16,12 @@ public class Rapiditos extends Transportes{
         this.alumnos = alumnos;
     }
 
+    public Rapiditos(int sillas, String placa, String color) {
+        super(placa, color);
+        this.sillas = sillas;
+    }
+    
+
     public int getSillas() {
         return sillas;
     }

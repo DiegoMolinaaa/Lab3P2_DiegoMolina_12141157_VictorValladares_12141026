@@ -18,6 +18,13 @@ public class Buses extends Transportes{
         this.depie = depie;
     }
 
+    public Buses(String placa, String color, int sillas, int depie) {
+        super(placa, color);
+        this.sillas = sillas;
+        this.depie = depie;
+    }
+    
+
     public ArrayList<Alumnos> getAlumnos() {
         return alumnos;
     }
@@ -46,7 +53,7 @@ public class Buses extends Transportes{
 
     @Override
     public String toString() {
-        return super.toString() + "alumnos=" + alumnos + ", sillas=" + sillas + ", depie=" + depie;
+        return super.toString() + "Alumnos=" + alumnos + ", Sillas=" + sillas + ", De Pie=" + depie;
     }
     
 }

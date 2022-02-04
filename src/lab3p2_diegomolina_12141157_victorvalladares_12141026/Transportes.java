@@ -18,12 +18,20 @@ public class Transportes {
         this.rutas = rutas;
     }
 
+    public Transportes(String placa, String color) {
+        this.placa = placa;
+        this.color = color;
+    }
+    
     public String getPlaca() {
         return placa;
     }
 
     public void setPlaca(String placa) {
         this.placa = placa;
+        if (placa != this.placa){
+            this.placa = placa;
+        }
     }
 
     public String getColor() {
@@ -52,7 +60,7 @@ public class Transportes {
 
     @Override
     public String toString() {
-        return "Transporte: " + "placa = " + placa + ", color = " + color + ", transportista = " + transportista + ", rutas = " + rutas;
+        return "Transporte: " + "Placa = " + placa + ", Color = " + color + ", Transportista = " + transportista + ", Rutas = " + rutas;
     }
     
     

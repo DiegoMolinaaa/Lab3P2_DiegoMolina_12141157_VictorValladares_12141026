@@ -16,6 +16,13 @@ public class Taxis extends Transportes {
         this.capacidad = capacidad;
     }
 
+    public Taxis(int numtaxi, int capacidad, String placa, String color) {
+        super(placa, color);
+        this.numtaxi = numtaxi;
+        this.capacidad = capacidad;
+    }
+    
+
     
 
     public int getNumtaxi() {
