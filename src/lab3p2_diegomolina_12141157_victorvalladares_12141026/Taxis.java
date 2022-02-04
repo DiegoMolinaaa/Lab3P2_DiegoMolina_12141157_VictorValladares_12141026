@@ -4,27 +4,24 @@ import java.util.ArrayList;
 
 public class Taxis extends Transportes {
     private int numtaxi;
-    private int capacidad;
+    private ArrayList <Alumnos> alumnos;
 
     public Taxis() {
         super();
     }
-
-    public Taxis(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas,int numtaxi, int capacidad) {
-        super( placa, color, transportista, rutas);
-        this.numtaxi = numtaxi;
-        this.capacidad = capacidad;
-    }
-
-    public Taxis(int numtaxi, int capacidad, String placa, String color) {
+    
+    public Taxis(int numtaxi, String placa, String color) {
         super(placa, color);
         this.numtaxi = numtaxi;
-        this.capacidad = capacidad;
     }
-    
+
+    public Taxis(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas,int numtaxi, ArrayList <Alumnos> alumnos) {
+        super( placa, color, transportista, rutas);
+        this.numtaxi = numtaxi;
+        this.alumnos = alumnos;
+    }
 
     
-
     public int getNumtaxi() {
         return numtaxi;
     }
@@ -33,19 +30,20 @@ public class Taxis extends Transportes {
         this.numtaxi = numtaxi;
     }
 
-    public int getCapacidad() {
-        return capacidad;
+    public ArrayList<Alumnos> getAlumnos() {
+        return alumnos;
     }
 
-    public void setCapacidad(int capacidad) {
-        if (capacidad <= 4 && capacidad >-1){
-            this.capacidad = capacidad;
+    
+    public void setAlumnos(ArrayList <Alumnos> alumnos) {
+        if (alumnos.size() <= 4 && alumnos.size() >-1){
+            this.alumnos = alumnos;
         }
     }
 
     @Override
     public String toString() {
-        return super.toString() + "numtaxi=" + numtaxi + ", capacidad=" + capacidad;
+        return super.toString() + "numtaxi=" + numtaxi + ", alumnos=" + alumnos;
     }
     
     
