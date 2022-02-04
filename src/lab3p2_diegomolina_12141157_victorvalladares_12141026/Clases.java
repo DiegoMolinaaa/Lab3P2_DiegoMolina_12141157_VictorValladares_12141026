@@ -5,10 +5,44 @@
  */
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
-/**
- *
- * @author diego
- */
-public class Clases {
+import java.util.Date;
+
+public class Clases extends Alumnos{
+    private String nombreClase;
+    private int codigo;
+
+    public Clases() {
+        super();
+    }
+
+    public Clases(String nombreClase, int codigo, int idEstudiantil, String nombre, int identidad, Date fechaNacimiento) {
+        super(idEstudiantil, nombre, identidad, fechaNacimiento);
+        this.nombreClase = nombreClase;
+        this.codigo = codigo;
+    }
+
+    public String getNombreClase() {
+        return nombreClase;
+    }
+
+    public void setNombreClase(String nombreClase) {
+        this.nombreClase = nombreClase;
+    }
+
+    public int getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(int codigo) {
+        if (codigo != this.codigo){
+            this.codigo = codigo;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + "nombreClase=" + nombreClase + ", codigo=" + codigo;
+    }
+    
     
 }

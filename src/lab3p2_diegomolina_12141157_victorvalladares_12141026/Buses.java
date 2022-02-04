@@ -3,7 +3,7 @@ package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 import java.util.ArrayList;
 
 public class Buses extends Transportes{
-    private ArrayList <Alumnos> alumnos;
+    private ArrayList <Alumnos> alumnos = new ArrayList();
     private int sillas;
     private int depie;
 

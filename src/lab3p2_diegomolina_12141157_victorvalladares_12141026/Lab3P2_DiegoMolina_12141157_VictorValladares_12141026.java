@@ -27,6 +27,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             op = lea.nextInt();
             switch(op){
                 case 1:{
+                    
                     break;
                 }
                 case 2:{
@@ -92,6 +93,48 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.println("-----------------------------------------------");
         return op;
     }
+    
+    
+    public static void crearClase(){
+        System.out.print("Ingrese el nombre de la clase: ");
+        String nombreClase = lea.nextLine();
+        System.out.print("Ingrese el codigo de la clase: ");
+        int codigo = lea.nextInt();
+        
+    }
+    public static void crearRuta(){
+        
+    }
+    public static void crearAlumno(){
+        
+    }
+    public static void agregarClase(){
+        
+    }
+    public static void crearTransportista(){
+        
+    }
+    public static void crearTransporte (){
+        
+    }
+    public static void listarClases(){
+        
+    }
+    public static void listarRutas(){
+        
+    }
+    public static void listarAlumnos (){
+        
+    }
+    public static void listarTransportistas(){
+        
+    }
+    public static void listarTransportes(){
+        
+    }
+    
+    //----------- Metodos de main ----------------------------------------------
+    
     public static void realizar(int op){
         if (op == 0){
             System.exit(0);
