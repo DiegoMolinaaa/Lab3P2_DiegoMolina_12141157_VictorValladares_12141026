@@ -1,14 +1,20 @@
 
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
+import java.util.Date;
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
 
     static Scanner lea = new Scanner(System.in);
-    
+    static ArrayList<Transportistas> transportistas = new ArrayList();
+    static ArrayList<Alumnos> alumnos = new ArrayList();
+    static ArrayList<Transportes> transportes = new ArrayList();
+    static ArrayList<Clases> clases = new ArrayList();
+    static ArrayList<Rutas> rutas = new ArrayList();
     public static void main(String[] args) {
         int op=0;
+        //transportistas.add(new Transportistas(20, "Joche", "Roberto Rodriguez", new Date()));
         while(op!=13){
             System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");
