@@ -19,7 +19,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.println("6) Crear Transporte");
             System.out.println("7) Simulacion");
             System.out.println("8) Listar Clases");
-            System.out.println("9) Listar Rutas");
+            System.out.println("9) Listar Estaciones");
             System.out.println("10) Listar Alumnos");
             System.out.println("11) Listar Transportistas");
             System.out.println("12) Listar Transportes");
@@ -29,22 +29,27 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.println("--------------------------------");
             switch(op){
                 case 1:{
-                    
+                    crearClase();
                     break;
                 }
                 case 2:{
+                    crearRuta();
                     break;
                 }
                 case 3:{
+                    crearAlumno();
                     break;
                 }
                 case 4:{
+                    agregarClase();
                     break;
                 }
                 case 5:{
+                    crearTransportista();
                     break;
                 }
                 case 6:{
+                    crearTransporte();
                     break;
                 }
                 case 7:{
@@ -53,18 +58,23 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                     }while(true);
                 }
                 case 8:{
+                    listarClases();
                     break;
                 }
                 case 9:{
+                    listarRutas();
                     break;
                 }
                 case 10:{
+                    listarAlumnos();
                     break;
                 }
                 case 11:{
+                    listarTransportistas();
                     break;
                 }
                 case 12:{
+                    listarTransportes();
                     break;
                 }
                 case 13:{
@@ -87,8 +97,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                         "3. Listar alumnos en un transporte\n" +
                         "4. Escoger transportista\n" +
                         "5. Quitar transportista\n" +
-                        "6. Añadir ruta\n" +
-                        "7. Quitar ruta\n" +
+                        "6. Añadir estacion\n" +
+                        "7. Quitar estacion\n" +
                         "8. Imprimir transporte\n" +
                         "9. Comenzar\n" +
                         "Ingrese la opcion: ");
@@ -161,4 +171,5 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             
         }
     }
+    
 }
