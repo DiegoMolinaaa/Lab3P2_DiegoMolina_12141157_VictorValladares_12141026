@@ -115,16 +115,34 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     
     
     public static void crearClase(){
+        lea.nextLine();
         System.out.print("Ingrese el nombre de la clase: ");
         String nombreClase = lea.nextLine();
         System.out.print("Ingrese el codigo de la clase: ");
         int codigo = lea.nextInt();
-        
+        for (Clases clases : clases){
+            if (clases.getCodigo() == codigo){
+                System.out.print("codigo ingresado ya existe ingresado ya existe, intente de nuevo: ");
+                codigo = lea.nextInt();
+            }
+        }
+        clases.add(new Clases(nombreClase, codigo));
     }
     public static void crearRuta(){
-        
+        lea.nextLine();
+        System.out.print("Ingrese el nombre de la estacion: ");
+        String nombre = lea.nextLine();
+        System.out.print("Ingrese una coordenada x: ");
+        int x= lea.nextInt();
+        System.out.print("Ingrese una coordenada y: ");
+        int y = lea.nextInt();
+        rutas.add(new Rutas(nombre, x, y));
     }
     public static void crearAlumno(){
+        lea.nextLine();
+        System.out.print("Ingrese el nombre del alumno: ");
+        String nombre = lea.nextLine();
+        System.out.print("Ingrese el id: ");
         
     }
     public static void agregarClase(){
