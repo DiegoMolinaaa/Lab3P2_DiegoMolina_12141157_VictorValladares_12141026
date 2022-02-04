@@ -217,7 +217,36 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         transportistas.add(new Transportistas(a, apodo, nombre, identidad, fecha));
     }
     public static void crearTransporte (){
-        
+        lea.nextLine();
+        System.out.print("Ingrese la placa: ");
+        String placa = lea.next();
+        for (Transportes transportes : transportes){
+            if (transportes.getPlaca() == placa){
+                System.out.print("la placa ingresada ya existe ingresado ya existe, intente de nuevo: ");
+                placa = lea.next();
+            }
+        }
+        System.out.print("Ingrese el color del transporte: ");
+        String color = lea.next();
+        System.out.print("Ingrese el tipo de transporte: ");
+        String tipo = lea.next();
+        if (tipo.equalsIgnoreCase("Buses")){
+            System.out.print("Ingrese la cantidad de sillas: ");
+            int sillas = lea.nextInt();
+            System.out.print("Ingrese la cantidad de personas que pueden ir paradas: ");
+            int depie = lea.nextInt();
+            transportes.add(new Buses(placa,color,sillas, depie));
+        }else if (tipo.equalsIgnoreCase("Rapiditos")){
+            System.out.print("Ingrese la cantidad de sillas: ");
+            int sillasR = lea.nextInt();
+            transportes.add(new Rapiditos(sillasR, placa, color));
+        }else if (tipo.equalsIgnoreCase("Mototaxi")){
+            transportes.add(new Mototaxis (placa,color));
+        }else if (tipo.equalsIgnoreCase("taxi")){
+            System.out.print("Ingrese el numero del taxi: ");
+            int num = lea.nextInt();
+            transportes.add(new Taxis(num, placa, color));        
+        }
     }
     public static void listarClases(){
         for (Object ob : clases) {
@@ -274,4 +303,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }
     }
     
+    public static void agregarEstacion(){
+        System.out.print("Ingrese la posicion de la estacion que desea agreagar: ");
+        int pos = lea.nextInt();
+        System.out.print("Ingrese la posicion del transporte al que le desea agregar esta ruta: ");
+        int pos2 = lea.nextInt();
+        transportes.get(pos2).getRutas().add(rutas.get(pos));
+    }
+    public static void quitarEstacion(){
+        System.out.print("Ingrese la posicion de la estacion que desea eliminar: ");
+        int pos = lea.nextInt();
+        transportes.get(pos).getRutas().remove(pos);
+    }
 }

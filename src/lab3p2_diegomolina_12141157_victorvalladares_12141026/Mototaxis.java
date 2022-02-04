@@ -3,28 +3,29 @@ package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 import java.util.ArrayList;
 
 public class Mototaxis extends Transportes{
-    private int alumnos;
+    private ArrayList <Alumnos> alumnos;
 
     public Mototaxis() {
         super();
     }
+    
+    public Mototaxis(String placa, String color) {
+        super(placa, color);
+    }
 
-    public Mototaxis(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas, int alumnos) {
+    public Mototaxis(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas, ArrayList <Alumnos> alumnos) {
         super( placa, color, transportista, rutas);
         this.alumnos = alumnos;
     }
 
-    public Mototaxis(int alumnos, String placa, String color) {
-        super(placa, color);
-    }
     
 
-    public int getAlumnos() {
+    public ArrayList<Alumnos> getAlumnos() {
         return alumnos;
     }
 
-    public void setAlumnos(int alumnos) {
-        if (alumnos <= 2 && alumnos > -1){
+    public void setAlumnos(ArrayList <Alumnos> alumnos) {
+        if (alumnos.size() <= 2 && alumnos.size() > -1){
             this.alumnos = alumnos;
         }
     }

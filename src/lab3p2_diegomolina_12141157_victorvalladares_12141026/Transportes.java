@@ -11,6 +11,11 @@ public class Transportes {
     public Transportes() {
     }
 
+    public Transportes(String placa, String color) {
+        this.placa = placa;
+        this.color = color;
+    }
+    
     public Transportes(String placa, String color, ArrayList <Transportistas> transportista, ArrayList<Rutas> rutas) {
         this.placa = placa;
         this.color = color;
@@ -18,30 +23,23 @@ public class Transportes {
         this.rutas = rutas;
     }
 
-    public Transportes(String placa, String color) {
-        this.placa = placa;
-        this.color = color;
-    }
-    
     public String getPlaca() {
         return placa;
     }
 
     public void setPlaca(String placa) {
         this.placa = placa;
-        if (placa != this.placa){
-            this.placa = placa;
-        }
     }
-
+    
+    
     public String getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+     public void setColor(String color) {
         this.color = color;
     }
-
+    
     public ArrayList <Transportistas> getTransportista() {
         return transportista;
     }
@@ -60,7 +58,7 @@ public class Transportes {
 
     @Override
     public String toString() {
-        return "Transporte: " + "Placa = " + placa + ", Color = " + color + ", Transportista = " + transportista + ", Rutas = " + rutas;
+        return "Transporte: " + "Placa = " + placa + ", Color = " + color + ", Transportista = " + transportista + ", Estaciones = " + rutas;
     }
     
     
