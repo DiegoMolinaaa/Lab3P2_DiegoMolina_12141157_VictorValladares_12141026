@@ -10,7 +10,7 @@ public class Taxis extends Transportes {
         super();
     }
 
-    public Taxis(int placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas,int numtaxi, int capacidad) {
+    public Taxis(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas,int numtaxi, int capacidad) {
         super( placa, color, transportista, rutas);
         this.numtaxi = numtaxi;
         this.capacidad = capacidad;

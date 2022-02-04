@@ -11,7 +11,7 @@ public class Buses extends Transportes{
         super();
     }
 
-    public Buses(int placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas, ArrayList<Alumnos> alumnos, int sillas, int depie) {
+    public Buses(String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas, ArrayList<Alumnos> alumnos, int sillas, int depie) {
         super( placa, color, transportista, rutas);
         this.alumnos = alumnos;
         this.sillas = sillas;
