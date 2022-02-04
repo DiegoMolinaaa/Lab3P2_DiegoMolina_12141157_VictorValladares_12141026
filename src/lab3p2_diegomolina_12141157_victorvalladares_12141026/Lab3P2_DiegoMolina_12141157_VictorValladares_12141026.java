@@ -1,24 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
 import java.util.Scanner;
 
-/**
- *
- * @author diego
- */
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
 
-    /**
-     * @param args the command line arguments
-     */
     static Scanner lea = new Scanner(System.in);
+    
     public static void main(String[] args) {
-        // TODO code application logic here
         int op=0;
         while(op!=13){
             System.out.println("--------------------------------");
@@ -58,7 +47,9 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                     break;
                 }
                 case 7:{
-                    break;
+                    do{
+                        realizar( menuSimulacion() );
+                    }while(true);
                 }
                 case 8:{
                     break;
@@ -77,7 +68,6 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                 }
                 case 13:{
                     System.exit(0);
-                    break;
                 }
                 default:{
                     System.out.println("Ingrese una opcion valida");
@@ -87,4 +77,44 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }//fin while
     }// fin main
     
+    public static int menuSimulacion(){
+        System.out.println("-----------------------------------------------");
+        System.out.println("0. Salir");
+        System.out.print("1. Subir alumno a transporte\n" +
+                        "2. Bajar alumno\n" +
+                        "3. Listar alumnos en un transporte\n" +
+                        "4. Escoger transportista\n" +
+                        "5. Quitar transportista\n" +
+                        "6. Añadir ruta\n" +
+                        "7. Quitar ruta\n" +
+                        "8. Imprimir transporte\n" +
+                        "9. Comenzar\n" +
+                        "Ingrese la opcion: ");
+        int op = lea.nextInt();
+        System.out.println("-----------------------------------------------");
+        return op;
+    }
+    public static void realizar(int op){
+        if (op == 0){
+            System.exit(0);
+        }else if (op == 1){
+           
+        }else if (op == 2){
+          
+        }else if (op == 3){
+           
+        }else if (op == 4){
+            
+        }else if (op == 5){
+            
+        }else if (op == 6){
+           
+        }else if (op == 7){
+           
+        }else if (op == 8){
+            
+        }else if (op == 9){
+            
+        }
+    }
 }
