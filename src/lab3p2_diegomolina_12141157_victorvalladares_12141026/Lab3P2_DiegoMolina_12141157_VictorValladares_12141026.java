@@ -1,6 +1,9 @@
 
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Date;
@@ -12,7 +15,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Transportes> transportes = new ArrayList();
     static ArrayList<Clases> clases = new ArrayList();
     static ArrayList<Rutas> rutas = new ArrayList();
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         int op=0;
         transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, new Date()));
         alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, new Date()));
@@ -143,12 +146,32 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         int y = lea.nextInt();
         rutas.add(new Rutas(nombre, x, y));
     }
-    public static void crearAlumno(){
+    public static void crearAlumno() throws ParseException{
         lea.nextLine();
         System.out.print("Ingrese el nombre del alumno: ");
         String nombre = lea.nextLine();
         System.out.print("Ingrese el id: ");
-        
+        int id = lea.nextInt();
+        for (Alumnos alumnos : alumnos){
+            if (alumnos.getIdEstudiantil()== id){
+                System.out.print("Id ingresado ya existe ingresado ya existe, intente de nuevo: ");
+                id = lea.nextInt();
+            }
+        }
+        System.out.print("Ingrese identidad: ");
+        long identidad = lea.nextLong();
+        for (Alumnos alumnos : alumnos){
+            if (alumnos.getIdentidad()== identidad){
+                System.out.print("la identidad ingresada ya existe , intente de nuevo: ");
+                identidad = lea.nextLong();
+            }
+        }
+        System.out.print("Ingrese su fecha de nacimiento con el formato [yyyy/mm/dd]: ");
+        String fechaN = lea.next();
+        Date fecha;
+        DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
+        fecha = df.parse(fechaN);
+        alumnos.add(new Alumnos(id, nombre, identidad, fecha));
     }
     public static void agregarClase(){
         System.out.print("Ingrese el numero del alumno que sera asignado la clase[0 a "+(alumnos.size()-1)+"]: ");
@@ -168,8 +191,28 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         ((Alumnos)alumnos.get(pos1)).getClases().add(clases.get(pos2));
         System.out.println("Se ha asignado la mascota exitosamente");
     }
-    public static void crearTransportista(){
-        
+    public static void crearTransportista() throws ParseException{
+        lea.nextLine();
+        System.out.print("Ingrese el nombre del transportista: ");
+        String nombre = lea.nextLine();
+        System.out.print("Ingrese el apodo del transportista: ");
+        String apodo = lea.nextLine();
+        System.out.print("Ingrese los años de experiencia: ");
+        int a = lea.nextInt();
+        System.out.print("Ingrese identidad: ");
+        long identidad = lea.nextLong();
+        for (Transportistas transportistas : transportistas){
+            if (transportistas.getIdentidad() == identidad){
+                System.out.print("la identidad ingresada ya existe ingresado ya existe, intente de nuevo: ");
+                identidad = lea.nextLong();
+            }
+        }
+        System.out.print("Ingrese su fecha de nacimiento con el formato [yyyy/mm/dd]: ");
+        String fechaN = lea.next();
+        Date fecha;
+        DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
+        fecha = df.parse(fechaN);
+        transportistas.add(new Transportistas(a, apodo, nombre, identidad, fecha));
     }
     public static void crearTransporte (){
         

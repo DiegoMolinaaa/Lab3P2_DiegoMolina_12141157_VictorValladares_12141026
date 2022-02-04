@@ -6,7 +6,10 @@
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
 import java.util.Date;
+
+
 public class Clases{
+
     private String nombreClase;
     private int codigo;
 

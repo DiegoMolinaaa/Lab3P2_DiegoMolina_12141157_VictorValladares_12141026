@@ -28,6 +28,7 @@ public class Transportes {
     }
 
     public void setPlaca(String placa) {
+        this.placa = placa;
         if (placa != this.placa){
             this.placa = placa;
         }
