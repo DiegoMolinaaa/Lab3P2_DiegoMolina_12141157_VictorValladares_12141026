@@ -19,7 +19,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Rutas> rutas = new ArrayList();
     static ArrayList <String> tipos = new ArrayList ();
     static ArrayList<Alumnos> alumnosSim = new ArrayList();
-    
+    static boolean entra=true;
     public static void main(String[] args) throws ParseException {
         int op=0;
         DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
@@ -81,7 +81,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                     int pos = lea.nextInt();
                     do{
                         realizar( menuSimulacion(), pos );
-                    }while(true);
+                    }while(entra==true);
+                    break;
                 }
                 case 8:{
                     listarClases();
@@ -127,6 +128,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                         "7. Quitar estacion\n" +
                         "8. Imprimir transporte\n" +
                         "9. Comenzar\n" +
+                        "10. Destruir el bus\n" +
                         "Ingrese la opcion: ");
         int op = lea.nextInt();
         System.out.println("-----------------------------------------------");
@@ -288,7 +290,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     //static Buses buses = new Buses ();
     public static void realizar(int op, int pos){
         if (op == 0){
-            System.exit(0);
+            entra=false;
         }else if (op == 1){
             subirAlumno(pos);
         }else if (op == 2){
@@ -307,6 +309,9 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             imprimirTransporte(pos);
         }else if (op == 9){
             simulacion(pos);
+        }
+        else if (op == 10){
+            destruirTransporte(pos);
         }
     }
     public static void escogerTransportista(int pos){
@@ -345,12 +350,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         transportes.get(pos).getRutas().remove(num);
     }
     public static void imprimirTransporte(int pos){
-        System.out.println(transportes.get(pos));
+        if(transportes.size()==0){
+            System.out.println("No hay transportes ");
+        }
+        else{
+            System.out.println(transportes.get(pos));
+        }
     }
     public static void listarAlumnosTransporte(int pos){ 
-        Buses buses = new Buses ();
-        if (tipos.get(pos).equalsIgnoreCase("Buses")){
-            System.out.println(buses.getAlumnos());
+        for (Transportes trans : transportes) {
+            System.out.println(transportes.indexOf(trans)+": "+transportes.get(pos).getAlumnos());
         }
     }
     public static void subirAlumno(int pos){
@@ -382,5 +391,34 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
         int num = lea.nextInt();
         ((Transportes)transportes.get(pos)).getAlumnos().remove(alumnos.get(num));
+    }
+    public static void destruirTransporte(int pos){
+        System.out.println("Noticia de Ultimo Momento: Transporte Escolar Explota ");
+        System.out.println("Descripcion del Transporte: ");
+        System.out.println("Color: "+transportes.get(pos).getColor()+"\nPlaca: "+transportes.get(pos).getPlaca());
+        System.out.println("Muertos Confirmados");
+        for (Transportes ob : transportes) {
+            if(transportes.get(pos).getAlumnos().size()==0){
+                System.out.println("No hubieron estudiantes muertos");
+            }
+            else{
+                System.out.println("Estudiantes:");
+                System.out.println(transportes.indexOf(ob)+":  "+transportes.get(pos).getAlumnos());
+            }
+        }
+        System.out.println("");
+        for (Transportes ob : transportes){
+            if(transportes.get(pos).getTransportista().size()==0){
+                System.out.println("El conductor pudo escapar");
+            }
+            else{
+                System.out.println("Transportista:");
+                System.out.println(transportes.indexOf(ob)+":  "+transportes.get(pos).getTransportista());
+                System.out.println("");
+            }
+            
+        }
+        System.out.println("");
+        transportes.remove(pos);
     }
 }
