@@ -120,7 +120,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                         "3. Listar alumnos en un transporte\n" +
                         "4. Escoger transportista\n" +
                         "5. Quitar transportista\n" +
-                        "6. Añadir estacion\n" +
+                        "6. A�adir estacion\n" +
                         "7. Quitar estacion\n" +
                         "8. Imprimir transporte\n" +
                         "9. Comenzar\n" +
@@ -206,7 +206,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         String nombre = lea.nextLine();
         System.out.print("Ingrese el apodo del transportista: ");
         String apodo = lea.nextLine();
-        System.out.print("Ingrese los años de experiencia: ");
+        System.out.print("Ingrese los a�os de experiencia: ");
         int a = lea.nextInt();
         System.out.print("Ingrese identidad: ");
         long identidad = lea.nextLong();
