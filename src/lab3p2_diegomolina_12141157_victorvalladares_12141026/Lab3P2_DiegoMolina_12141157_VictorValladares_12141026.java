@@ -73,7 +73,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                     break;
                 }
                 case 7:{
-                    System.out.println("Escogera el transporte a utilizar. Ingrese un numero entre [0 a "+(transportes.size()-1)+"]: ");
+                    System.out.print("Escogera el transporte a utilizar. Ingrese un numero entre [0 a "+(transportes.size()-1)+"]: ");
                     int pos = lea.nextInt();
                     do{
                         realizar( menuSimulacion(), pos );
@@ -290,7 +290,13 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
+<<<<<<< HEAD
+            System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
+            int num = lea.nextInt();
+            ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
+=======
             subirAlumno(pos);
+>>>>>>> 3533478974ba4239eace9a26f5a378bc3779a6a4
         }else if (op == 2){
           
         }else if (op == 3){
@@ -311,7 +317,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     }
     public static void escogerTransportista(int pos){
         if((transportes.get(pos).getTransportista().size())==0){
-            System.out.print("Ingrese un numero entre [0 a "+(transportistas.size()-1)+": ");
+            System.out.print("Ingrese un numero entre [0 a "+(transportistas.size()-1)+"]: ");
             int num = lea.nextInt();
             ((Transportes)transportes.get(pos)).getTransportista().add(transportistas.get(num));
             System.out.println("Se ha agregado el transportista exitosamente");
