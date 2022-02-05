@@ -18,6 +18,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Rutas> rutas = new ArrayList();
     static ArrayList <String> tipos = new ArrayList ();
     static ArrayList<Alumnos> alumnosSim = new ArrayList();
+    
     public static void main(String[] args) throws ParseException {
         int op=0;
         DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
@@ -242,20 +243,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.print("Ingrese la cantidad de personas que pueden ir paradas: ");
             int depie = lea.nextInt();
             transportes.add(new Buses(placa,color,sillas, depie));
-            tipos.add("Buses");
         }else if (tipo.equalsIgnoreCase("Rapiditos")){
             System.out.print("Ingrese la cantidad de sillas: ");
             int sillasR = lea.nextInt();
             transportes.add(new Rapiditos(sillasR, placa, color));
-            tipos.add("Rapiditos");
         }else if (tipo.equalsIgnoreCase("Mototaxi")){
             transportes.add(new Mototaxis (placa,color));
-            tipos.add("Mototaxis");
         }else if (tipo.equalsIgnoreCase("taxi")){
             System.out.print("Ingrese el numero del taxi: ");
             int num = lea.nextInt();
             transportes.add(new Taxis(num, placa, color));    
-            tipos.add("Taxis");
         }
     }
     public static void listarClases(){
@@ -290,15 +287,9 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
-<<<<<<< HEAD
-            System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
-            int num = lea.nextInt();
-            ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
-=======
             subirAlumno(pos);
->>>>>>> 3533478974ba4239eace9a26f5a378bc3779a6a4
         }else if (op == 2){
-          
+            bajarAlumno(pos);
         }else if (op == 3){
            listarAlumnosTransporte(pos);
         }else if (op == 4){
@@ -360,9 +351,21 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }
     }
     public static void subirAlumno(int pos){
-        Buses buses = new Buses ();
-        if (tipos.get(pos).equalsIgnoreCase("Buses")){
-            buses.getAlumnos().add(alumnos.get(pos));
+        System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
+        int num = lea.nextInt();
+        ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
+    }
+    public static void simulacion(){
+        int x1 = 0;
+        int y1 = 0;
+        double d = 0;
+        for (Rutas rutas : rutas){
+            d = Math.sqrt((rutas.getX()-x1)^2+(rutas.getY()-y1)^2);
         }
+    }
+    public static void bajarAlumno(int pos){
+        System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
+        int num = lea.nextInt();
+        ((Transportes)transportes.get(pos)).getAlumnos().remove(alumnos.get(num));
     }
 }
