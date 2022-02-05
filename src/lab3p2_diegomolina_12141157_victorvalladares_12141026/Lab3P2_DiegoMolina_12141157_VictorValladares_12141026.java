@@ -10,6 +10,7 @@ import java.util.Date;
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
 
     static Scanner lea = new Scanner(System.in);
+    static DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
     static ArrayList<Transportistas> transportistas = new ArrayList();
     static ArrayList<Alumnos> alumnos = new ArrayList();
     static ArrayList<Transportes> transportes = new ArrayList();
@@ -22,6 +23,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
         transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse(df.format(new Date()))));
         alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse(df.format(new Date()))));
+        transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse("1966/03/5")));
+        alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse("2001/07/22")));
         transportes.add(new Buses("KJ1241EWIX", "Amarillo",20, 15));
         clases.add(new Clases("Programacion II", 1286));
         clases.add(new Clases("Algebra", 225));
@@ -174,7 +177,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese su fecha de nacimiento con el formato [yyyy/mm/dd]: ");
         String fechaN = lea.next();
         Date fecha;
-        DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
+        
         fecha = df.parse(fechaN);
         alumnos.add(new Alumnos(id, nombre, identidad, fecha));
     }
@@ -282,17 +285,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     }
     
     //----------- Metodos de main ----------------------------------------------
-    static Buses b = new Buses ();
-    
+    //static Buses buses = new Buses ();
     public static void realizar(int op, int pos){
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
-            subirAlumno();
+            subirAlumno(pos);
         }else if (op == 2){
           
         }else if (op == 3){
-           listarAlumnosTransporte();
+           listarAlumnosTransporte(pos);
         }else if (op == 4){
             escogerTransportista(pos);
         }else if (op == 5){
@@ -345,18 +347,16 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     public static void imprimirTransporte(int pos){
         System.out.println(transportes.get(pos));
     }
-    public static void listarAlumnosTransporte(){ 
-        System.out.print("Ingrese la posicion de los transportes al que desea imprimir [0 a"+(rutas.size()-1)+"]: ");
-        int num = lea.nextInt();
-        if (tipos.get(num).equalsIgnoreCase("Buses")){
-            System.out.println(b.getAlumnos());
+    public static void listarAlumnosTransporte(int pos){ 
+        Buses buses = new Buses ();
+        if (tipos.get(pos).equalsIgnoreCase("Buses")){
+            System.out.println(buses.getAlumnos());
         }
     }
-    public static void subirAlumno(){
-        System.out.print("Ingrese la posicion de los transportes al que desea subir [0 a"+(rutas.size()-1)+"]: ");
-        int num = lea.nextInt();
-        if (tipos.get(num).equalsIgnoreCase("Buses")){
-            b.getAlumnos().add(alumnos.get(num));
+    public static void subirAlumno(int pos){
+        Buses buses = new Buses ();
+        if (tipos.get(pos).equalsIgnoreCase("Buses")){
+            buses.getAlumnos().add(alumnos.get(pos));
         }
     }
 }
