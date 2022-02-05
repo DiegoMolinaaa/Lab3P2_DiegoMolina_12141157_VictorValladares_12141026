@@ -16,6 +16,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Clases> clases = new ArrayList();
     static ArrayList<Rutas> rutas = new ArrayList();
     static ArrayList <String> tipos = new ArrayList ();
+    static ArrayList<Alumnos> alumnosSim = new ArrayList();
     public static void main(String[] args) throws ParseException {
         int op=0;
         DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
@@ -287,49 +288,75 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
-<<<<<<< HEAD
-           subirAlumno();
-=======
-            System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+": ");
-            int num = lea.nextInt();
-            //((Transportes)transportes.get(pos).getAlumnos().add(alumnos.get(num));
-           
->>>>>>> 323246158717d7e28770cd2295e4a6c7620330ae
+            subirAlumno();
         }else if (op == 2){
           
         }else if (op == 3){
            listarAlumnosTransporte();
         }else if (op == 4){
-            
+            escogerTransportista(pos);
         }else if (op == 5){
-            
+            quitarTransportista(pos);
         }else if (op == 6){
-           agregarEstacion();
+           agregarEstacion(pos);
         }else if (op == 7){
-           quitarEstacion();
+           quitarEstacion(pos);
         }else if (op == 8){
-            
+            imprimirTransporte(pos);
         }else if (op == 9){
             
         }
     }
-    
-    public static void agregarEstacion(){
-        System.out.print("Ingrese la posicion de la estacion que desea agreagar: ");
-        int pos = lea.nextInt();
-        System.out.print("Ingrese la posicion del transporte al que le desea agregar esta ruta: ");
-        int pos2 = lea.nextInt();
-        transportes.get(pos2).getRutas().add(rutas.get(pos));
+    public static void escogerTransportista(int pos){
+        if((transportes.get(pos).getTransportista().size())==0){
+            System.out.print("Ingrese un numero entre [0 a "+(transportistas.size()-1)+": ");
+            int num = lea.nextInt();
+            ((Transportes)transportes.get(pos)).getTransportista().add(transportistas.get(num));
+            System.out.println("Se ha agregado el transportista exitosamente");
+        }
+        else{
+            System.out.println("Ya hay un Transportista asignado");
+        }
     }
-    public static void quitarEstacion(){
-        System.out.print("Ingrese la posicion de la estacion que desea eliminar: ");
-        int pos = lea.nextInt();
-        transportes.get(pos).getRutas().remove(pos);
+    public static void quitarTransportista(int pos){
+        if((transportes.get(pos).getTransportista().size())==0){
+            System.out.println("No hay transportista asignado");
+        }
+        else{
+            transportes.get(pos).getTransportista().remove(0);
+            System.out.println("Se ha eliminado el transportista exitosamente");
+        }
+    }
+    public static void agregarEstacion(int pos){
+        System.out.print("Ingrese el nombre de la Estacion: ");
+        lea.nextLine();
+        String nom = lea.nextLine();
+        System.out.print("Ingrese la coordenada x: ");
+        int x = lea.nextInt(0);
+        System.out.print("Ingrese la coordenada : ");
+        int y = lea.nextInt(0);
+        transportes.get(pos).getRutas().add(new Rutas(nom, x, y));
+    }
+    public static void quitarEstacion(int pos){
+        System.out.print("Ingrese la posicion de la estacion que desea eliminar [0 a"+(rutas.size()-1)+"]: ");
+        int num = lea.nextInt();
+        transportes.get(pos).getRutas().remove(num);
+    }
+    public static void imprimirTransporte(int pos){
+        System.out.println(transportes.get(pos));
     }
     public static void listarAlumnosTransporte(){ 
-        
+        System.out.print("Ingrese la posicion de los transportes al que desea imprimir [0 a"+(rutas.size()-1)+"]: ");
+        int num = lea.nextInt();
+        if (tipos.get(num).equalsIgnoreCase("Buses")){
+            System.out.println(b.getAlumnos());
+        }
     }
     public static void subirAlumno(){
-        
+        System.out.print("Ingrese la posicion de los transportes al que desea subir [0 a"+(rutas.size()-1)+"]: ");
+        int num = lea.nextInt();
+        if (tipos.get(num).equalsIgnoreCase("Buses")){
+            b.getAlumnos().add(alumnos.get(num));
+        }
     }
 }

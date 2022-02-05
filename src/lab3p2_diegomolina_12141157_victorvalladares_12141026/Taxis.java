@@ -43,7 +43,7 @@ public class Taxis extends Transportes {
 
     @Override
     public String toString() {
-        return super.toString() + "numtaxi=" + numtaxi + ", alumnos=" + alumnos;
+        return super.toString() + ", numtaxi=" + numtaxi + ", alumnos=" + alumnos;
     }
     
     
