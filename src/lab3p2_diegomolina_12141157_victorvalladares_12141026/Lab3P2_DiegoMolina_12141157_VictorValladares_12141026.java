@@ -5,6 +5,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.Date;
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
@@ -30,6 +31,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         clases.add(new Clases("Programacion II", 1286));
         clases.add(new Clases("Algebra", 225));
         rutas.add(new Rutas("Plaza Miraflores", 5, 7));
+        rutas.add(new Rutas("Mall Dorado", 1, 2));
+        rutas.add(new Rutas("City Mall", 10, 3));
         while(op!=13){
             System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");
@@ -303,7 +306,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }else if (op == 8){
             imprimirTransporte(pos);
         }else if (op == 9){
-            
+            simulacion(pos);
         }
     }
     public static void escogerTransportista(int pos){
@@ -355,13 +358,25 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         int num = lea.nextInt();
         ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
     }
-    public static void simulacion(){
+    public static void simulacion(int pos){
         int x1 = 0;
         int y1 = 0;
-        double d = 0;
-        for (Rutas rutas : rutas){
-            d = Math.sqrt((rutas.getX()-x1)^2+(rutas.getY()-y1)^2);
+        int i = 0;
+        ArrayList <Double> distancias = new ArrayList ();
+        for (Transportes transporte : transportes){
+            ((Transportes)transportes.get(pos)).getRutas().add(rutas.get(i));
         }
+        for (int j = 0; i <  rutas.size(); i++){
+            double XC = Math.pow(rutas.get(i).getX(), 2);
+            double XY = Math.pow(rutas.get(i).getY(), 2);
+            double XmasY = XC + XY;
+            double distancia = Math.sqrt(XmasY);
+            distancias.add(distancia);
+            System.out.println(distancia);
+        }
+        System.out.println(distancias);
+        Collections.sort(distancias);
+        System.out.println(distancias);
     }
     public static void bajarAlumno(int pos){
         System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
