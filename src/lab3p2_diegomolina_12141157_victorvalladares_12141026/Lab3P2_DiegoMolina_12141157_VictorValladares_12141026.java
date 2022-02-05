@@ -16,9 +16,13 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Transportes> transportes = new ArrayList();
     static ArrayList<Clases> clases = new ArrayList();
     static ArrayList<Rutas> rutas = new ArrayList();
+    static ArrayList <String> tipos = new ArrayList ();
     static ArrayList<Alumnos> alumnosSim = new ArrayList();
     public static void main(String[] args) throws ParseException {
         int op=0;
+        DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
+        transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse(df.format(new Date()))));
+        alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse(df.format(new Date()))));
         transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse("1966/03/5")));
         alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse("2001/07/22")));
         transportes.add(new Buses("KJ1241EWIX", "Amarillo",20, 15));
@@ -222,7 +226,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese la placa: ");
         String placa = lea.next();
         for (Transportes transportes : transportes){
-            if (transportes.getPlaca() == placa){
+            if (transportes.getPlaca().equalsIgnoreCase(placa)){
                 System.out.print("la placa ingresada ya existe ingresado ya existe, intente de nuevo: ");
                 placa = lea.next();
             }
@@ -237,16 +241,20 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             System.out.print("Ingrese la cantidad de personas que pueden ir paradas: ");
             int depie = lea.nextInt();
             transportes.add(new Buses(placa,color,sillas, depie));
+            tipos.add("Buses");
         }else if (tipo.equalsIgnoreCase("Rapiditos")){
             System.out.print("Ingrese la cantidad de sillas: ");
             int sillasR = lea.nextInt();
             transportes.add(new Rapiditos(sillasR, placa, color));
+            tipos.add("Rapiditos");
         }else if (tipo.equalsIgnoreCase("Mototaxi")){
             transportes.add(new Mototaxis (placa,color));
+            tipos.add("Mototaxis");
         }else if (tipo.equalsIgnoreCase("taxi")){
             System.out.print("Ingrese el numero del taxi: ");
             int num = lea.nextInt();
-            transportes.add(new Taxis(num, placa, color));        
+            transportes.add(new Taxis(num, placa, color));    
+            tipos.add("Taxis");
         }
     }
     public static void listarClases(){
@@ -276,18 +284,22 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     }
     
     //----------- Metodos de main ----------------------------------------------
-    
+    //static Buses buses = new Buses ();
     public static void realizar(int op, int pos){
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
+<<<<<<< HEAD
             System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
             int num = lea.nextInt();
             ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
+=======
+            subirAlumno(pos);
+>>>>>>> 3533478974ba4239eace9a26f5a378bc3779a6a4
         }else if (op == 2){
           
         }else if (op == 3){
-           
+           listarAlumnosTransporte(pos);
         }else if (op == 4){
             escogerTransportista(pos);
         }else if (op == 5){
@@ -299,6 +311,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }else if (op == 8){
             imprimirTransporte(pos);
         }else if (op == 9){
+            
         }
     }
     public static void escogerTransportista(int pos){
@@ -338,5 +351,17 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     }
     public static void imprimirTransporte(int pos){
         System.out.println(transportes.get(pos));
+    }
+    public static void listarAlumnosTransporte(int pos){ 
+        Buses buses = new Buses ();
+        if (tipos.get(pos).equalsIgnoreCase("Buses")){
+            System.out.println(buses.getAlumnos());
+        }
+    }
+    public static void subirAlumno(int pos){
+        Buses buses = new Buses ();
+        if (tipos.get(pos).equalsIgnoreCase("Buses")){
+            buses.getAlumnos().add(alumnos.get(pos));
+        }
     }
 }
