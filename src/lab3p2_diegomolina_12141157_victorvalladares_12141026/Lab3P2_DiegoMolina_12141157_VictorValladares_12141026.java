@@ -177,6 +177,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese su fecha de nacimiento con el formato [yyyy/mm/dd]: ");
         String fechaN = lea.next();
         Date fecha;
+        
         fecha = df.parse(fechaN);
         alumnos.add(new Alumnos(id, nombre, identidad, fecha));
     }
@@ -258,28 +259,28 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         }
     }
     public static void listarClases(){
-        for (Clases clase : clases) {
-            System.out.println(clases.indexOf(clase)+" -> "+clase.toString());
+        for (Object ob : clases) {
+            System.out.println(clases.indexOf(ob)+" -> "+clases.toString());
         }
     }
     public static void listarRutas(){
         for (Object ob : rutas) {
-            System.out.println(rutas.indexOf(ob)+" -> "+ob.toString());
+            System.out.println(rutas.indexOf(ob)+" -> "+rutas.toString());
         }
     }
     public static void listarAlumnos (){
-        for (Alumnos alumno : alumnos) {
-            System.out.println(alumnos.indexOf(alumno)+" -> "+alumno.toString());
+        for (Object ob : alumnos) {
+            System.out.println(alumnos.indexOf(ob)+" -> "+alumnos.toString());
         }
     }
     public static void listarTransportistas(){
         for (Object ob : transportistas) {
-            System.out.println(transportistas.indexOf(ob)+" -> "+ob.toString());
+            System.out.println(transportistas.indexOf(ob)+" -> "+transportistas.toString());
         }
     }
     public static void listarTransportes(){
         for (Object ob : transportes) {
-            System.out.println(transportes.indexOf(ob)+" -> "+ob.toString());
+            System.out.println(transportes.indexOf(ob)+" -> "+transportes.toString());
         }
     }
     
