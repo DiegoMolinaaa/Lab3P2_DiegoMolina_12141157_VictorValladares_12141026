@@ -10,6 +10,7 @@ import java.util.Date;
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
 
     static Scanner lea = new Scanner(System.in);
+    static DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
     static ArrayList<Transportistas> transportistas = new ArrayList();
     static ArrayList<Alumnos> alumnos = new ArrayList();
     static ArrayList<Transportes> transportes = new ArrayList();
@@ -18,8 +19,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     static ArrayList<Alumnos> alumnosSim = new ArrayList();
     public static void main(String[] args) throws ParseException {
         int op=0;
-        transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, new Date()));
-        alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, new Date()));
+        transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse("1966/03/5")));
+        alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse("2001/07/22")));
         transportes.add(new Buses("KJ1241EWIX", "Amarillo",20, 15));
         clases.add(new Clases("Programacion II", 1286));
         clases.add(new Clases("Algebra", 225));
@@ -172,7 +173,7 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese su fecha de nacimiento con el formato [yyyy/mm/dd]: ");
         String fechaN = lea.next();
         Date fecha;
-        DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
+        
         fecha = df.parse(fechaN);
         alumnos.add(new Alumnos(id, nombre, identidad, fecha));
     }
