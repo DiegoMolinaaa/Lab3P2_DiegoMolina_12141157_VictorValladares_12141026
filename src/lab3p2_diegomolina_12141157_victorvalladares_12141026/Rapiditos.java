@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Rapiditos extends Transportes{
     private int sillas;
-    private ArrayList <Alumnos> alumnos= new ArrayList();
+    
 
     public Rapiditos() {
         super();
     }
 
-    public Rapiditos(int sillas, String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Rutas> rutas) {
-        super(placa, color, transportista, rutas);
+    public Rapiditos(int sillas, String placa, String color, ArrayList <Transportistas>  transportista, ArrayList<Alumnos> alumnos, ArrayList<Rutas> rutas) {
+        super(placa, color, transportista, alumnos, rutas);
         this.sillas = sillas;
     }
 
@@ -29,19 +29,9 @@ public class Rapiditos extends Transportes{
         this.sillas = sillas;
     }
 
-    public ArrayList<Alumnos> getAlumnos() {
-        return alumnos;
-    }
-
-    public void setAlumnos(ArrayList<Alumnos> alumnos) {
-        if (alumnos.size() <= sillas){
-            this.alumnos = alumnos;
-        }
-    }
-
     @Override
     public String toString() {
-        return super.toString() + ", sillas=" + sillas + ", alumnos=" + alumnos;
+        return super.toString() + ", sillas=" + sillas;
     }
     
     

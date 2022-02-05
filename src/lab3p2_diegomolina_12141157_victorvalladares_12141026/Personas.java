@@ -5,6 +5,8 @@
  */
 package lab3p2_diegomolina_12141157_victorvalladares_12141026;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,6 +14,7 @@ import java.util.Date;
  * @author diego
  */
 public class Personas {
+    SimpleDateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
     private String nombre;
     private long identidad;
     private Date fechaNacimiento;
@@ -51,7 +54,7 @@ public class Personas {
 
     @Override
     public String toString() {
-        return "Nombre = " + nombre + ", Identidad = " + identidad + ", Fecha de Nacimiento = " + fechaNacimiento+", ";
+        return "Nombre = " + nombre + ", Identidad = " + identidad + ", Fecha de Nacimiento = " + df.format(fechaNacimiento)+", ";
     }
     
 
