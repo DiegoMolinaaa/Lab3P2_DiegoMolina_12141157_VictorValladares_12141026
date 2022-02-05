@@ -69,8 +69,10 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
                     break;
                 }
                 case 7:{
+                    System.out.println("Escogera el transporte a utilizar. Ingrese un numero entre [0 a "+(transportes.size()-1)+"]: ");
+                    int pos = lea.nextInt();
                     do{
-                        realizar( menuSimulacion() );
+                        realizar( menuSimulacion(), pos );
                     }while(true);
                 }
                 case 8:{
@@ -281,11 +283,18 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
     //----------- Metodos de main ----------------------------------------------
     static Buses b = new Buses ();
     
-    public static void realizar(int op){
+    public static void realizar(int op, int pos){
         if (op == 0){
             System.exit(0);
         }else if (op == 1){
+<<<<<<< HEAD
            subirAlumno();
+=======
+            System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+": ");
+            int num = lea.nextInt();
+            //((Transportes)transportes.get(pos).getAlumnos().add(alumnos.get(num));
+           
+>>>>>>> 323246158717d7e28770cd2295e4a6c7620330ae
         }else if (op == 2){
           
         }else if (op == 3){
