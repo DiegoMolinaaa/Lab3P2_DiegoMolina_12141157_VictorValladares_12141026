@@ -27,12 +27,12 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse(df.format(new Date()))));
         transportistas.add(new Transportistas(15, "Joche", "Juan Ramon Oliva", 123456789, df.parse("1966/03/5")));
         alumnos.add(new Alumnos(12140143, "Roberto Rodriguez", 332424424, df.parse("2001/07/22")));
+        alumnos.add(new Alumnos(12141026, "Kristian Molina", 346291721, df.parse("2002/05/21")));
         transportes.add(new Buses("KJ1241EWIX", "Amarillo",20, 15));
         clases.add(new Clases("Programacion II", 1286));
         clases.add(new Clases("Algebra", 225));
         rutas.add(new Rutas("Plaza Miraflores", 5, 7));
         rutas.add(new Rutas("Mall Dorado", 1, 2));
-        rutas.add(new Rutas("City Mall", 10, 3));
         while(op!=13){
             System.out.println("--------------------------------");
             System.out.println("1) Crear Clase");
@@ -366,6 +366,8 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
         System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
         int num = lea.nextInt();
         ((Transportes)transportes.get(pos)).getAlumnos().add(alumnos.get(num));
+        alumnos.remove(num);
+        
     }
     public static void simulacion(int pos){
         int x1 = 0;
@@ -381,11 +383,21 @@ public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
             double XmasY = XC + XY;
             double distancia = Math.sqrt(XmasY);
             distancias.add(distancia);
-            System.out.println(distancia);
+            //System.out.println(distancia);
         }
-        System.out.println(distancias);
         Collections.sort(distancias);
-        System.out.println(distancias);
+        for (int j = 0; j < ((Transportes)transportes.get(pos)).getAlumnos().size(); j++) {
+            //if (((Transportes)transportes.get(pos)).getAlumnos().size() <= rutas.size()){
+                for (int h = 0; h < ((Transportes)transportes.get(pos)).getAlumnos().size()/rutas.size(); h++){
+                    System.out.println("El alumno que se ha bajado fue : " + transportes.get(pos).getAlumnos().get(h));
+                    rutas.remove(h);
+                    transportes.get(pos).getAlumnos().remove(h);
+                }   
+            /*}else{
+                System.out.println("No hay suficientes alumnos para bajarse");
+                System.exit(0);
+            }*/
+        }
     }
     public static void bajarAlumno(int pos){
         System.out.print("Ingrese un numero entre [0 a "+(alumnos.size()-1)+"]: ");
