@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.Date;
 public class Lab3P2_DiegoMolina_12141157_VictorValladares_12141026 {
 
-    static Scanner lea = new Scanner(System.in);
+    static Scanner lea = new Scanner(System.in);//holaaaa
     static DateFormat df = new  SimpleDateFormat("yyyy/MM/dd");
     static ArrayList<Transportistas> transportistas = new ArrayList();
     static ArrayList<Alumnos> alumnos = new ArrayList();
