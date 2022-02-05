@@ -53,7 +53,7 @@ public class Buses extends Transportes{
 
     @Override
     public String toString() {
-        return super.toString() + "Alumnos=" + alumnos + ", Sillas=" + sillas + ", De Pie=" + depie;
+        return super.toString() + ", Alumnos=" + alumnos + ", Sillas=" + sillas + ", De Pie=" + depie;
     }
     
 }

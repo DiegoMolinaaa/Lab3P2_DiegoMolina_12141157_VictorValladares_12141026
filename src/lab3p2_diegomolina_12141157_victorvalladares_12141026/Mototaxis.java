@@ -32,7 +32,7 @@ public class Mototaxis extends Transportes{
 
     @Override
     public String toString() {
-        return super.toString() + "alumnos=" + alumnos;
+        return super.toString() + ", alumnos=" + alumnos;
     }
     
     

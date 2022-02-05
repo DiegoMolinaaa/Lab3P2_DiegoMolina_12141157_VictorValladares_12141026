@@ -41,7 +41,7 @@ public class Rapiditos extends Transportes{
 
     @Override
     public String toString() {
-        return super.toString() + "sillas=" + sillas + ", alumnos=" + alumnos;
+        return super.toString() + ", sillas=" + sillas + ", alumnos=" + alumnos;
     }
     
     
